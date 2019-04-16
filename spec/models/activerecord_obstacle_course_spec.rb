@@ -422,7 +422,7 @@ describe 'ActiveRecord Obstacle Course' do
     # ------------------ Using ActiveRecord ----------------------
     # Solution goes here
     # binding.pry
-    items_for_user_3_third_order = Order.where(user_id: @user_3.id, id: 12).joins(:items).pluck(:name)
+    items_for_user_3_third_order = Order.where(user_id: @user_3.id).joins(:items).limit(3).last.pluck(:name)
     # ------------------------------------------------------------
 
     # Expectation
